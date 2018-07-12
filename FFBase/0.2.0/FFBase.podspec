@@ -30,7 +30,7 @@ TODO: Add long description of the pod here.
 
   s.ios.deployment_target = '8.0'
 
-  s.source_files = 'FFBase/Classes/**/*'
+  #s.source_files = 'FFBase/Classes/**/*'
   
   # s.resource_bundles = {
   #   'FFBase' => ['FFBase/Assets/*.png']
@@ -38,7 +38,15 @@ TODO: Add long description of the pod here.
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
-  s.dependency 'AFNetworking'
-  s.dependency 'FMDB'
+
+s.subspec 'FFCategory' do |c|
+    c.source_files = 'FFBase/Classes/FFCategory/**/*'
+    c.dependency 'AFNetworking'
+end
+
+s.subspec 'YCCategory' do |c|
+    c.source_files = 'FFBase/Classes/YCCategory/**/*'
+    c.dependency 'FMDB'
+end
 
 end
